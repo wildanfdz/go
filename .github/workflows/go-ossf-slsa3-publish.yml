@@ -1,0 +1,96 @@
+package main
+
+import "fmt"
+
+// Struktur untuk menyimpan data Penelitian dan Abdimas
+type Kegiatan struct {
+	ID            int
+	Jenis         string // Penelitian atau Abdimas
+	Ketua         string
+	Anggota       [4]string
+	JumlahAnggota int
+	Prodi         string
+	Judul         string
+	SumberDana    string
+	Luaran        [4]string
+	JumlahLuaran  int
+	Tahun         int
+}
+
+const MAX_KEGIATAN = 100
+
+// Variabel global untuk menyimpan array statis kegiatan
+var daftarKegiatan [MAX_KEGIATAN]Kegiatan
+var jumlahKegiatan int = 0
+
+// Fungsi Sequential Search
+func sequentialSearch() {
+	// Implementasi sequential search
+}
+
+// Fungsi untuk menambahkan kegiatan
+func tambahKegiatan() {
+	// Implementasi fungsi tambah kegiatan
+}
+
+// Fungsi untuk menampilkan semua kegiatan
+func tampilkanSemuaKegiatan() {
+	// Implementasi fungsi menampilkan semua kegiatan
+}
+
+// Fungsi untuk menghapus kegiatan berdasarkan ID
+func hapusKegiatan() {
+	// Implementasi fungsi hapus kegiatan
+}
+
+// Fungsi Selection Sort untuk mengurutkan berdasarkan Tahun Ascending
+func selectionSortTahunAscending() {
+	// Implementasi sorting berdasarkan tahun ascending
+}
+
+// Fungsi Selection Sort untuk mengurutkan berdasarkan Tahun Descending
+func selectionSortTahunDescending() {
+	// Implementasi sorting berdasarkan tahun descending
+}
+
+// Fungsi untuk menampilkan menu utama
+func menu() {
+	for {
+		fmt.Println("\nAplikasi Tri-Darma Perguruan Tinggi")
+		fmt.Println("1. Tambah Data Kegiatan")
+		fmt.Println("2. Tampilkan Semua Kegiatan")
+		fmt.Println("3. Hapus Data Kegiatan")
+		fmt.Println("4. Urutkan Kegiatan Berdasarkan Tahun Ascending")
+		fmt.Println("5. Urutkan Kegiatan Berdasarkan Tahun Descending")
+		fmt.Println("6. Keluar")
+
+		var pilihan int
+		fmt.Print("Pilih menu: ")
+		fmt.Scanln(&pilihan)
+
+		switch pilihan {
+		case 1:
+			tambahKegiatan()
+		case 2:
+			tampilkanSemuaKegiatan()
+		case 3:
+			var id int
+			fmt.Print("Masukkan ID kegiatan yang akan dihapus: ")
+			fmt.Scanln(&id)
+			hapusKegiatan()
+		case 4:
+			selectionSortTahunAscending()
+		case 5:
+			selectionSortTahunDescending()
+		case 6:
+			fmt.Println("Keluar dari aplikasi. Terima kasih!")
+			return
+		default:
+			fmt.Println("Pilihan tidak valid!")
+		}
+	}
+}
+
+func main() {
+	menu()
+}
